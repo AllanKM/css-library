@@ -1,0 +1,245 @@
+/* =============================================
+   CS Book Library — Stylesheet
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #f0f4f8;
+  color: #2d3748;
+  min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: #fff;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+header p.subtitle {
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* ---------- Search & Filter Bar ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.controls input[type="search"] {
+  padding: 0.55rem 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 260px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.controls input[type="search"]:focus {
+  border-color: #2b6cb0;
+}
+
+.controls select {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.controls select:focus {
+  border-color: #2b6cb0;
+}
+
+/* ---------- Stats Bar ---------- */
+.stats-bar {
+  text-align: center;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.875rem;
+  color: #718096;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* ---------- Main Layout ---------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ---------- Section / Category ---------- */
+.category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a365d;
+  border-left: 4px solid #2b6cb0;
+  padding-left: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Book Grid ---------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------- Book Card ---------- */
+.book-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* Colour-coded spine */
+.book-card .spine {
+  height: 8px;
+}
+
+.book-card .book-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  font-size: 3.5rem;
+  background: #ebf4ff;
+}
+
+.book-card .book-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.book-card .book-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #1a365d;
+}
+
+.book-card .book-author {
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+.book-card .book-year {
+  font-size: 0.78rem;
+  color: #a0aec0;
+}
+
+.book-card .book-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.book-card .tag {
+  background: #ebf4ff;
+  color: #2b6cb0;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- Status Badge ---------- */
+.book-card .status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+.status.read     { background: #c6f6d5; color: #276749; }
+.status.reading  { background: #fefcbf; color: #744210; }
+.status.to-read  { background: #fed7d7; color: #9b2c2c; }
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: #a0aec0;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+  margin-top: 2rem;
+}
+
+/* ---------- No-results message ---------- */
+#no-results {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #718096;
+  font-size: 1.05rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .controls input[type="search"],
+  .controls select {
+    width: 100%;
+    max-width: 360px;
+  }
+}

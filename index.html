@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Book Library</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>📚 CS Book Library</h1>
+    <p class="subtitle">A personal collection of Computer Science books</p>
+  </header>
+
+  <!-- ===== Controls ===== -->
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search by title or author…" aria-label="Search books" />
+    <select id="filter-category" aria-label="Filter by category">
+      <option value="">All Categories</option>
+      <option value="Algorithms &amp; Data Structures">Algorithms &amp; Data Structures</option>
+      <option value="Programming">Programming</option>
+      <option value="Systems">Systems</option>
+      <option value="Software Engineering">Software Engineering</option>
+      <option value="Computer Science Theory">Computer Science Theory</option>
+      <option value="AI &amp; Machine Learning">AI &amp; Machine Learning</option>
+    </select>
+    <select id="filter-status" aria-label="Filter by reading status">
+      <option value="">All Statuses</option>
+      <option value="read">Read</option>
+      <option value="reading">Currently Reading</option>
+      <option value="to-read">To Read</option>
+    </select>
+  </div>
+
+  <!-- ===== Stats ===== -->
+  <div class="stats-bar" id="stats"></div>
+
+  <!-- ===== Main Content ===== -->
+  <main id="library">
+
+    <!-- Algorithms & Data Structures -->
+    <section class="category" data-category="Algorithms &amp; Data Structures">
+      <h2 class="category-title">Algorithms &amp; Data Structures</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="Algorithms &amp; Data Structures" data-status="read">
+          <div class="spine" style="background:#3182ce;"></div>
+          <div class="book-cover">📖</div>
+          <div class="book-body">
+            <div class="book-title">Introduction to Algorithms</div>
+            <div class="book-author">Cormen, Leiserson, Rivest &amp; Stein</div>
+            <div class="book-year">2022 · 4th ed.</div>
+            <div class="book-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">Data Structures</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Algorithms &amp; Data Structures" data-status="read">
+          <div class="spine" style="background:#3182ce;"></div>
+          <div class="book-cover">📖</div>
+          <div class="book-body">
+            <div class="book-title">The Algorithm Design Manual</div>
+            <div class="book-author">Steven S. Skiena</div>
+            <div class="book-year">2020 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">Problem Solving</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Algorithms &amp; Data Structures" data-status="to-read">
+          <div class="spine" style="background:#3182ce;"></div>
+          <div class="book-cover">📖</div>
+          <div class="book-body">
+            <div class="book-title">Algorithms</div>
+            <div class="book-author">Robert Sedgewick &amp; Kevin Wayne</div>
+            <div class="book-year">2011 · 4th ed.</div>
+            <div class="book-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">Java</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Algorithms &amp; Data Structures" data-status="reading">
+          <div class="spine" style="background:#3182ce;"></div>
+          <div class="book-cover">📖</div>
+          <div class="book-body">
+            <div class="book-title">Grokking Algorithms</div>
+            <div class="book-author">Aditya Y. Bhargava</div>
+            <div class="book-year">2016</div>
+            <div class="book-tags">
+              <span class="tag">Algorithms</span>
+              <span class="tag">Beginner</span>
+            </div>
+            <span class="status reading">⟳ Reading</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Programming -->
+    <section class="category" data-category="Programming">
+      <h2 class="category-title">Programming</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="Programming" data-status="read">
+          <div class="spine" style="background:#38a169;"></div>
+          <div class="book-cover">💻</div>
+          <div class="book-body">
+            <div class="book-title">The Pragmatic Programmer</div>
+            <div class="book-author">Andrew Hunt &amp; David Thomas</div>
+            <div class="book-year">2019 · 20th Anniversary ed.</div>
+            <div class="book-tags">
+              <span class="tag">Best Practices</span>
+              <span class="tag">Career</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Programming" data-status="read">
+          <div class="spine" style="background:#38a169;"></div>
+          <div class="book-cover">💻</div>
+          <div class="book-body">
+            <div class="book-title">Clean Code</div>
+            <div class="book-author">Robert C. Martin</div>
+            <div class="book-year">2008</div>
+            <div class="book-tags">
+              <span class="tag">Best Practices</span>
+              <span class="tag">Refactoring</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Programming" data-status="read">
+          <div class="spine" style="background:#38a169;"></div>
+          <div class="book-cover">💻</div>
+          <div class="book-body">
+            <div class="book-title">Structure and Interpretation of Computer Programs</div>
+            <div class="book-author">Abelson, Sussman &amp; Sussman</div>
+            <div class="book-year">1996 · 2nd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Scheme</span>
+              <span class="tag">Fundamentals</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Programming" data-status="to-read">
+          <div class="spine" style="background:#38a169;"></div>
+          <div class="book-cover">💻</div>
+          <div class="book-body">
+            <div class="book-title">You Don't Know JS (series)</div>
+            <div class="book-author">Kyle Simpson</div>
+            <div class="book-year">2015</div>
+            <div class="book-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Deep Dive</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Programming" data-status="reading">
+          <div class="spine" style="background:#38a169;"></div>
+          <div class="book-cover">💻</div>
+          <div class="book-body">
+            <div class="book-title">Eloquent JavaScript</div>
+            <div class="book-author">Marijn Haverbeke</div>
+            <div class="book-year">2018 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Web</span>
+            </div>
+            <span class="status reading">⟳ Reading</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Systems -->
+    <section class="category" data-category="Systems">
+      <h2 class="category-title">Systems</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="Systems" data-status="read">
+          <div class="spine" style="background:#d69e2e;"></div>
+          <div class="book-cover">⚙️</div>
+          <div class="book-body">
+            <div class="book-title">Operating System Concepts</div>
+            <div class="book-author">Silberschatz, Galvin &amp; Gagne</div>
+            <div class="book-year">2018 · 10th ed.</div>
+            <div class="book-tags">
+              <span class="tag">OS</span>
+              <span class="tag">Systems</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Systems" data-status="read">
+          <div class="spine" style="background:#d69e2e;"></div>
+          <div class="book-cover">⚙️</div>
+          <div class="book-body">
+            <div class="book-title">Computer Systems: A Programmer's Perspective</div>
+            <div class="book-author">Bryant &amp; O'Hallaron</div>
+            <div class="book-year">2015 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Architecture</span>
+              <span class="tag">C</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Systems" data-status="to-read">
+          <div class="spine" style="background:#d69e2e;"></div>
+          <div class="book-cover">⚙️</div>
+          <div class="book-body">
+            <div class="book-title">Designing Data-Intensive Applications</div>
+            <div class="book-author">Martin Kleppmann</div>
+            <div class="book-year">2017</div>
+            <div class="book-tags">
+              <span class="tag">Databases</span>
+              <span class="tag">Distributed</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Systems" data-status="to-read">
+          <div class="spine" style="background:#d69e2e;"></div>
+          <div class="book-cover">⚙️</div>
+          <div class="book-body">
+            <div class="book-title">The C Programming Language</div>
+            <div class="book-author">Kernighan &amp; Ritchie</div>
+            <div class="book-year">1988 · 2nd ed.</div>
+            <div class="book-tags">
+              <span class="tag">C</span>
+              <span class="tag">Classic</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Software Engineering -->
+    <section class="category" data-category="Software Engineering">
+      <h2 class="category-title">Software Engineering</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="Software Engineering" data-status="read">
+          <div class="spine" style="background:#9f7aea;"></div>
+          <div class="book-cover">🏗️</div>
+          <div class="book-body">
+            <div class="book-title">Design Patterns</div>
+            <div class="book-author">Gang of Four</div>
+            <div class="book-year">1994</div>
+            <div class="book-tags">
+              <span class="tag">Patterns</span>
+              <span class="tag">OOP</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Software Engineering" data-status="reading">
+          <div class="spine" style="background:#9f7aea;"></div>
+          <div class="book-cover">🏗️</div>
+          <div class="book-body">
+            <div class="book-title">A Philosophy of Software Design</div>
+            <div class="book-author">John Ousterhout</div>
+            <div class="book-year">2021 · 2nd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Design</span>
+              <span class="tag">Complexity</span>
+            </div>
+            <span class="status reading">⟳ Reading</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Software Engineering" data-status="to-read">
+          <div class="spine" style="background:#9f7aea;"></div>
+          <div class="book-cover">🏗️</div>
+          <div class="book-body">
+            <div class="book-title">The Mythical Man-Month</div>
+            <div class="book-author">Frederick P. Brooks Jr.</div>
+            <div class="book-year">1995 · Anniversary ed.</div>
+            <div class="book-tags">
+              <span class="tag">Project Mgmt</span>
+              <span class="tag">Classic</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Software Engineering" data-status="to-read">
+          <div class="spine" style="background:#9f7aea;"></div>
+          <div class="book-cover">🏗️</div>
+          <div class="book-body">
+            <div class="book-title">Refactoring</div>
+            <div class="book-author">Martin Fowler</div>
+            <div class="book-year">2018 · 2nd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Refactoring</span>
+              <span class="tag">Best Practices</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Computer Science Theory -->
+    <section class="category" data-category="Computer Science Theory">
+      <h2 class="category-title">Computer Science Theory</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="Computer Science Theory" data-status="read">
+          <div class="spine" style="background:#e53e3e;"></div>
+          <div class="book-cover">🔬</div>
+          <div class="book-body">
+            <div class="book-title">Introduction to the Theory of Computation</div>
+            <div class="book-author">Michael Sipser</div>
+            <div class="book-year">2012 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Theory</span>
+              <span class="tag">Automata</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Computer Science Theory" data-status="to-read">
+          <div class="spine" style="background:#e53e3e;"></div>
+          <div class="book-cover">🔬</div>
+          <div class="book-body">
+            <div class="book-title">Concrete Mathematics</div>
+            <div class="book-author">Graham, Knuth &amp; Patashnik</div>
+            <div class="book-year">1994 · 2nd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Discrete Math</span>
+              <span class="tag">Foundations</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="Computer Science Theory" data-status="reading">
+          <div class="spine" style="background:#e53e3e;"></div>
+          <div class="book-cover">🔬</div>
+          <div class="book-body">
+            <div class="book-title">The Art of Computer Programming (Vol. 1)</div>
+            <div class="book-author">Donald E. Knuth</div>
+            <div class="book-year">1997 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">Classic</span>
+              <span class="tag">Algorithms</span>
+            </div>
+            <span class="status reading">⟳ Reading</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AI & Machine Learning -->
+    <section class="category" data-category="AI &amp; Machine Learning">
+      <h2 class="category-title">AI &amp; Machine Learning</h2>
+      <div class="book-grid">
+
+        <div class="book-card" data-category="AI &amp; Machine Learning" data-status="read">
+          <div class="spine" style="background:#ed8936;"></div>
+          <div class="book-cover">🤖</div>
+          <div class="book-body">
+            <div class="book-title">Artificial Intelligence: A Modern Approach</div>
+            <div class="book-author">Russell &amp; Norvig</div>
+            <div class="book-year">2020 · 4th ed.</div>
+            <div class="book-tags">
+              <span class="tag">AI</span>
+              <span class="tag">Textbook</span>
+            </div>
+            <span class="status read">✓ Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="AI &amp; Machine Learning" data-status="reading">
+          <div class="spine" style="background:#ed8936;"></div>
+          <div class="book-cover">🤖</div>
+          <div class="book-body">
+            <div class="book-title">Deep Learning</div>
+            <div class="book-author">Goodfellow, Bengio &amp; Courville</div>
+            <div class="book-year">2016</div>
+            <div class="book-tags">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Neural Nets</span>
+            </div>
+            <span class="status reading">⟳ Reading</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="AI &amp; Machine Learning" data-status="to-read">
+          <div class="spine" style="background:#ed8936;"></div>
+          <div class="book-cover">🤖</div>
+          <div class="book-body">
+            <div class="book-title">Hands-On Machine Learning with Scikit-Learn &amp; TensorFlow</div>
+            <div class="book-author">Aurélien Géron</div>
+            <div class="book-year">2022 · 3rd ed.</div>
+            <div class="book-tags">
+              <span class="tag">ML</span>
+              <span class="tag">Python</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+        <div class="book-card" data-category="AI &amp; Machine Learning" data-status="to-read">
+          <div class="spine" style="background:#ed8936;"></div>
+          <div class="book-cover">🤖</div>
+          <div class="book-body">
+            <div class="book-title">Pattern Recognition and Machine Learning</div>
+            <div class="book-author">Christopher M. Bishop</div>
+            <div class="book-year">2006</div>
+            <div class="book-tags">
+              <span class="tag">ML</span>
+              <span class="tag">Bayesian</span>
+            </div>
+            <span class="status to-read">✦ To Read</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- No results message -->
+    <p id="no-results">No books found matching your search.</p>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>📚 CS Book Library &mdash; <span id="footer-year"></span> &mdash; Built with HTML &amp; CSS</p>
+  </footer>
+
+  <!-- ===== JavaScript (filtering / search) ===== -->
+  <script>
+    const searchInput      = document.getElementById('search');
+    const filterCategory   = document.getElementById('filter-category');
+    const filterStatus     = document.getElementById('filter-status');
+    const statsBar         = document.getElementById('stats');
+    const noResults        = document.getElementById('no-results');
+    const allCards         = Array.from(document.querySelectorAll('.book-card'));
+    const allSections      = Array.from(document.querySelectorAll('.category'));
+
+    // Footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    function updateStats() {
+      const total   = allCards.length;
+      const read    = allCards.filter(c => c.dataset.status === 'read').length;
+      const reading = allCards.filter(c => c.dataset.status === 'reading').length;
+      const toRead  = allCards.filter(c => c.dataset.status === 'to-read').length;
+      statsBar.textContent =
+        `${total} books total · ✓ ${read} read · ⟳ ${reading} reading · ✦ ${toRead} to read`;
+    }
+
+    function filterBooks() {
+      const query    = searchInput.value.toLowerCase().trim();
+      const category = filterCategory.value;
+      const status   = filterStatus.value;
+
+      let visibleCount = 0;
+
+      allCards.forEach(card => {
+        const title  = card.querySelector('.book-title').textContent.toLowerCase();
+        const author = card.querySelector('.book-author').textContent.toLowerCase();
+        const matchesSearch   = !query    || title.includes(query) || author.includes(query);
+        const matchesCategory = !category || card.dataset.category === category;
+        const matchesStatus   = !status   || card.dataset.status   === status;
+
+        const visible = matchesSearch && matchesCategory && matchesStatus;
+        card.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+      });
+
+      // Show/hide entire sections based on whether they have visible cards
+      allSections.forEach(section => {
+        const sectionCategory = section.dataset.category;
+        const hasVisible = Array.from(section.querySelectorAll('.book-card'))
+          .some(c => c.style.display !== 'none');
+        section.style.display = hasVisible ? '' : 'none';
+      });
+
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterBooks);
+    filterCategory.addEventListener('change', filterBooks);
+    filterStatus.addEventListener('change', filterBooks);
+
+    updateStats();
+  </script>
+
+</body>
+</html>
